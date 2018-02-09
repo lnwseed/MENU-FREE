@@ -6,7 +6,7 @@ fi
 hariini=`date +%d-%m-%Y`
 clear
 echo -e ""
-echo -e "     FAST VPN LOWCLASS"
+echo -e "   FAST VPN OCSPANEL-INFO"
 echo -e "=========-account-=========="
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/expirelist.txt
 totalaccounts=`cat /tmp/expirelist.txt | wc -l`
@@ -27,13 +27,13 @@ for((i=1; i<=$totalaccounts; i++ ))
            username=$username" " 
        done
        bulantahun=`echo $tglexp |awk -F" " '{print $2,$6}'`
-       echo "echo "LOWCLASS User : $username หมดอายุ : $tgl $bulantahun"" >> /usr/local/bin/alluser
+       echo "echo "OCSPANEL User : $username หมดอายุ : $tgl $bulantahun"" >> /usr/local/bin/alluser
        todaystime=`date +%s`
        if [ $userexpireinseconds -ge $todaystime ] ;
            then
 			:ไม่มีบัญชีที่หมดอายุ 
        else
-       echo "echo "LOWCLASS & Username : $username หมดอายุ : $tgl $bulantahun ลบเรียบรอยแล้ว : $hariini "" >> /usr/local/bin/deleteduser
+       echo "echo "OCSPANEL & Username : $username หมดอายุ : $tgl $bulantahun ลบเรียบรอยแล้ว : $hariini "" >> /usr/local/bin/deleteduser
 	   echo "Username $username ลบเรียบรอยแล้ว $hariini"
        userdel $username
        fi
