@@ -30,7 +30,7 @@ usermod -e  $LOW_EXP $username
   echo -e "$password\n$password" | passwd $username
 clear
 echo -e ""
-echo -e "     FAST VPN LOWCLASS"
+echo -e "   FAST VPN OCSPANEL-INFO"
 echo -e "=========-account-=========="
 echo -e ""
 echo -e "  USERNAME : $username"
@@ -44,6 +44,6 @@ echo -e ""
 echo -e "  http://$MYIP/client.ovpn "
 echo -e ""
 echo -e "==========================="
-echo -e "       LOWCLASS VPN"
+echo -e "  >>> FACEBOOK/CEOLNW"
 echo -e ""
 fi
