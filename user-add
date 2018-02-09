@@ -1,5 +1,5 @@
 #!/bin/bash
-# O C S P A N E L - I N F O
+# CREATES BY OCSPANEL-INFO
 clear
 echo -e ""
 read -p "  USERNAME : " username
