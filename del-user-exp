@@ -1,4 +1,5 @@
 #!/bin/bash
+# CREATES BY OCSPANEL-INFO
 if [ ! -f /usr/local/bin/deleteduser ]; then
     echo "echo "LOWCLASS"" > /usr/local/bin/deleteduser
 	chmod +x /usr/local/bin/deleteduser
