@@ -1,5 +1,5 @@
 #!/bin/bash
-# Created by D1NFUCK3R
+# CREATES BY OCSPANEL-INFO
 if [[ -e /etc/debian_version ]]; then
 	OS=debian
 	RCLOCAL='/etc/rc.local'
@@ -16,13 +16,13 @@ color2='\e[34;1m'
 color3='\e[0m'
 clear
 	echo -e ""
-	echo -e "     FAST VPN LOWCLASS "
+	echo -e "     FAST VPN OCSPANEL-INFO "
 	echo -e "=========================== "
-	echo -e "${color1} 1)${color3}.${color2} ADD USER OPENVPN ${color3}"
-	echo -e "${color1} 2)${color3}.${color2} DELETE USER EXP. ${color3}"
-	echo -e "${color1} 3)${color3}.${color2} RESTART OPENVPN ${color3}"
-	echo -e "${color1} 4)${color3}.${color2} RESTART SQUID PROXY ${color3}"
-	echo -e "${color1} 5)${color3}.${color2} REBOOT SERVER VPS. ${color3}"
+	echo -e "${color1} 1)${color3}.${color2} เพิ่ม USER OPENVPN ${color3}"
+	echo -e "${color1} 2)${color3}.${color2} ลบ USER EXP. ${color3}"
+	echo -e "${color1} 3)${color3}.${color2} รีสตาร์ท OPENVPN ${color3}"
+	echo -e "${color1} 4)${color3}.${color2} รีสตาร์ท SQUID PROXY ${color3}"
+	echo -e "${color1} 5)${color3}.${color2} รีสตาร์ท SERVER VPS. ${color3}"
 	echo -e "=========================== "
 	echo -e ""
 read -p " YOU WANT ? (พิมพ์เลข): " x
