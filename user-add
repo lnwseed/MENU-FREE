@@ -14,18 +14,18 @@ else
 echo -e ""
 read -p "  PASSWORD : " password
 echo -e ""
-read -p "  EXP.(DAY): " LOWCLASS
+read -p "  EXP.(DAY): " OCSPANEL
 echo -e ""
 MYIP=$(wget -qO- ipv4.icanhazip.com)
 today=`date +%s`
-LOWDAY=$(( $LOWCLASS * 86400 ))
-LOWEXP=$(($today + $LOWDAY))
-LOW_EXP=$(date -u --date="1970-01-01 $LOWEXP sec GMT" +%Y/%m/%d)
-LOWCLASS_EXP=$(date -u --date="1970-01-01 $LOWEXP sec GMT" '+%d %B %Y')
+OCSDAY=$(( $OCSPANEL * 86400 ))
+OCSEXP=$(($today + $OCSDAY))
+OCS_EXP=$(date -u --date="1970-01-01 $OCSEXP sec GMT" +%Y/%m/%d)
+OCSPANEL_EXP=$(date -u --date="1970-01-01 $OCSEXP sec GMT" '+%d %B %Y')
 clear
 useradd $username
 usermod -s /bin/false $username
-usermod -e  $LOW_EXP $username
+usermod -e  $OCS_EXP $username
   egrep "^$username" /etc/passwd >/dev/null
   echo -e "$password\n$password" | passwd $username
 clear
@@ -37,7 +37,7 @@ echo -e "  USERNAME : $username"
 echo -e ""
 echo -e "  PASSWORD : $password"
 echo -e ""
-echo -e "  EXP. DAY : $LOWCLASS_EXP"
+echo -e "  EXP. DAY : $OCSPANEL_EXP"
 echo -e ""
 echo -e "  CONFIG : OPENVPN "
 echo -e ""
