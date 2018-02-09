@@ -1,5 +1,5 @@
 #!/bin/bash
-#LOWCLASS
+# O C S P A N E L - I N F O
 clear
 echo -e ""
 read -p "  USERNAME : " username
