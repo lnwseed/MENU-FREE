@@ -40,5 +40,5 @@ for((i=1; i<=$totalaccounts; i++ ))
 done
 echo -e ""
 echo -e "============================"
-echo -e "       LOWCLASS VPN"
+echo -e "     OCSPANEL-INFO VPN"
 echo -e ""
