@@ -16,7 +16,7 @@ color2='\e[34;1m'
 color3='\e[0m'
 clear
 	echo -e ""
-	echo -e "     FAST VPN OCSPANEL-INFO "
+	echo -e "   FAST VPN OCSPANEL-INFO "
 	echo -e "=========================== "
 	echo -e "${color1} 1)${color3}.${color2} เพิ่ม USER OPENVPN ${color3}"
 	echo -e "${color1} 2)${color3}.${color2} ลบ USER EXP. ${color3}"
