@@ -1,0 +1,47 @@
+#!/bin/bash
+# Created by D1NFUCK3R
+if [[ -e /etc/debian_version ]]; then
+	OS=debian
+	RCLOCAL='/etc/rc.local'
+elif [[ -e /etc/centos-release || -e /etc/redhat-release ]]; then
+	OS=centos
+	RCLOCAL='/etc/rc.d/rc.local'
+	chmod +x /etc/rc.d/rc.local
+else
+	echo " Debian, Ubuntu หรือ CentOS "
+	exit
+fi
+color1='\e[031;1m'
+color2='\e[34;1m'
+color3='\e[0m'
+clear
+	echo -e ""
+	echo -e "     FAST VPN LOWCLASS "
+	echo -e "=========================== "
+	echo -e "${color1} 1)${color3}.${color2} ADD USER OPENVPN ${color3}"
+	echo -e "${color1} 2)${color3}.${color2} DELETE USER EXP. ${color3}"
+	echo -e "${color1} 3)${color3}.${color2} RESTART OPENVPN ${color3}"
+	echo -e "${color1} 4)${color3}.${color2} RESTART SQUID PROXY ${color3}"
+	echo -e "${color1} 5)${color3}.${color2} REBOOT SERVER VPS. ${color3}"
+	echo -e "=========================== "
+	echo -e ""
+read -p " YOU WANT ? (พิมพ์เลข): " x
+if test $x -eq 1; then
+clear
+user-add
+elif test $x -eq 2; then
+clear
+del-user-exp
+elif test $x -eq 3; then
+clear
+service openvpn restart
+elif test $x -eq 4; then
+clear
+service squid3 restart
+elif test $x -eq 5; then
+clear
+reboot
+else
+echo "ไม่พบตัวเลือกในเมนู."
+exit
+fi

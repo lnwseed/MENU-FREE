@@ -1,0 +1,49 @@
+#!/bin/bash
+#LOWCLASS
+clear
+echo -e ""
+read -p "  USERNAME : " username
+egrep "^$username" /etc/passwd >/dev/null
+if [ $? -eq 0 ]; then
+clear
+echo -e ""
+echo -e "  USERNAME ซ้ำ "
+echo -e ""
+exit 0
+else
+echo -e ""
+read -p "  PASSWORD : " password
+echo -e ""
+read -p "  EXP.(DAY): " LOWCLASS
+echo -e ""
+MYIP=$(wget -qO- ipv4.icanhazip.com)
+today=`date +%s`
+LOWDAY=$(( $LOWCLASS * 86400 ))
+LOWEXP=$(($today + $LOWDAY))
+LOW_EXP=$(date -u --date="1970-01-01 $LOWEXP sec GMT" +%Y/%m/%d)
+LOWCLASS_EXP=$(date -u --date="1970-01-01 $LOWEXP sec GMT" '+%d %B %Y')
+clear
+useradd $username
+usermod -s /bin/false $username
+usermod -e  $LOW_EXP $username
+  egrep "^$username" /etc/passwd >/dev/null
+  echo -e "$password\n$password" | passwd $username
+clear
+echo -e ""
+echo -e "     FAST VPN LOWCLASS"
+echo -e "=========-account-=========="
+echo -e ""
+echo -e "  USERNAME : $username"
+echo -e ""
+echo -e "  PASSWORD : $password"
+echo -e ""
+echo -e "  EXP. DAY : $LOWCLASS_EXP"
+echo -e ""
+echo -e "  CONFIG : OPENVPN "
+echo -e ""
+echo -e "  http://$MYIP/client.ovpn "
+echo -e ""
+echo -e "==========================="
+echo -e "       LOWCLASS VPN"
+echo -e ""
+fi
